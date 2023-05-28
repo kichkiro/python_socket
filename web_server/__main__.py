@@ -46,7 +46,6 @@ def signal_handler(_signal_received: int, __frame: object) -> None:
     """
     print("\nServer has been stopped.")
     os.kill(os.getpid(), 9)
-    sys.exit()
 
 
 def connection_handler(conn_socket: socket) -> None:
@@ -92,7 +91,6 @@ def connection_handler(conn_socket: socket) -> None:
         conn_socket.send("HTTP/1.1 404 Not Found\r\n".encode())
         conn_socket.close()
         print("File not found.")
-    print("Connection closed. - Thread has been stopped.")
 
 
 def main(argv: List[str]) -> None:
