@@ -126,12 +126,12 @@ def main(argv: List[str]) -> None:
 
     while True:
 
-        # Establish the connection --------------------------------------->
+        # Establish the connection ------------------------------------------->
         print('\nReady to serve...')
         conn_socket, addr = server_socket.accept()
         print(f"Connection from {addr} has been established.")
 
-        # Creating new thread for handle this connection
+        # Creating new thread for handle the connection ---------------------->
         thread = Thread(target=connection_handler, args=(conn_socket, ))
         thread.start()
 
